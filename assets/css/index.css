@@ -1,0 +1,53 @@
+.container{
+    margin: 10vw 25vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(184, 233, 184);
+    border: 2px solid green;
+}
+
+.numPerson, .year{
+    flex: 1 10%;
+    margin: 1vw 1vw;
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+#lbl-income1, #lbl-income2{
+    flex: 1 30%;
+    margin: 1vw 1vw;
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+#numPerson, #year{
+    flex: 1 10%;
+    margin: 1vw 1vw;
+    border: 1px solid green;
+    font-size: 1.2vw;
+}
+
+#income-1, #income-2{
+    flex: 1 30%;
+    margin: 1vw 1vw;
+    font-size: .9vw;
+    text-align: right;
+}
+
+#submit{
+    flex: 1 100%;
+    margin: 1vw 1vw;
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+#result{
+    flex: 1 100%;
+    margin: 1vw 0vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+    text-align: center;
+}
