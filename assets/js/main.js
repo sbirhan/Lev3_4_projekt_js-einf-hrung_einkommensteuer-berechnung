@@ -22,6 +22,7 @@ function changePerson(){
         state2 = 1;
     }
     else{
+        document.getElementById("lbl-income1").innerHTML = "Income";
         document.getElementById("lbl-income2").style.visibility = "hidden";
         document.getElementById("income-2").style.visibility = "hidden";
         state2 = 0;
