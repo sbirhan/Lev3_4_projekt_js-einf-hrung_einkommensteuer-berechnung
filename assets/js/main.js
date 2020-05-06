@@ -7,6 +7,7 @@ var state2 = 0;
 var tax = 0;
 
 function initialization(){
+    document.getElementById("lbl-income1").innerHTML = "Income";
     document.getElementById("lbl-income2").style.visibility = "hidden";
     document.getElementById("income-2").style.visibility = "hidden";
     document.getElementById("income-1").value = "0";
@@ -15,7 +16,7 @@ function initialization(){
 
 function changePerson(){
     if (document.getElementById("numPerson").value == "2"){
-        console.log(document.getElementById("numPerson").value);
+        document.getElementById("lbl-income1").innerHTML = "Income of 1st Person";
         document.getElementById("lbl-income2").style.visibility = "visible";
         document.getElementById("income-2").style.visibility = "visible";
         state2 = 1;
@@ -43,7 +44,12 @@ function changeYear(){
 }
 
 function changeIncome() {
-    if (document.getElementById("income-1").value == "0" && document.getElementById("income-2").value != "0") {
+    if (document.getElementById("income-1").value<0 || document.getElementById("income-2").value<0){
+        window.alert("Please input a valid value!");
+        document.getElementById("income-1").value = 0;
+        document.getElementById("income-2").value = 0;
+    }
+    else if (document.getElementById("income-1").value == "0" && document.getElementById("income-2").value != "0") {
         document.getElementById("income-1").value = document.getElementById("income-2").value;
         document.getElementById("income-2").value = "0"
     } 
@@ -55,16 +61,16 @@ function count(){
     if (income < berechnung[0]) {
         tax = 0;
     }
-    if (income > berechnung[0] && income <= berechnung[1]) {
+    else if (income > berechnung[0] && income <= berechnung[1]) {
         tax = ((income - berechnung[0])/10000) * ((((income - berechnung[0])/10000) * berechnung[4]) + 1400);
     }
-    if (income > berechnung[1] && income <= berechnung[2]) {
+    else if (income > berechnung[1] && income <= berechnung[2]) {
         tax = ((income - berechnung[1])/10000) * ((((income - berechnung[1])/10000) * berechnung[5]) + 2397) + berechnung[6];
     }
-    if (income > berechnung[2] && income <= berechnung[3]) {
+    else if (income > berechnung[2] && income <= berechnung[3]) {
         tax = 0.42 * income - berechnung[7];
     }
-    if (income > berechnung[3]) {
+    else if (income > berechnung[3]) {
         tax = 0.45 * income - berechnung[8];
     }
     document.getElementById("result").innerHTML = " Tax : " + tax.toFixed(2);
